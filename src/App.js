@@ -11,7 +11,7 @@ const URL =
 
 async function render() {
   const toornamentData = await fetch(URL).then((res) => res.json());
-  const data = convertData(toornamentData);
+  const {database: data} = convertData(toornamentData);
 
   window.bracketsViewer.render({
     stages: data.stage,
